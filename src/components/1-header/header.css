@@ -1,3 +1,41 @@
+.border{
+    border: 3px solid red;
+}
+.fixed{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(40, 40, 48, 0.91);
+    
+}
+@keyframes mymove {
+    0% {scale: 0;}
+    99% {scale: 1.1;}
+    100% {scale: 1 ;}
+}
+.fixed > ul.module{
+    width: 85%;
+    margin-inline: auto;
+    margin-top: 2rem;
+    background-color: var(--secondary);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    animation: mymove 1s 1;
+}
+.fixed>ul.module>li{
+    padding: .6rem 0;
+}
+.fixed>ul.module>li:not(:last-child){
+    border-bottom: 1px solid var(--border);
+}
+.fixed>ul.module>li:first-child{
+    border: none;
+    padding: 0;
+    padding-top: 0.2rem;
+    text-align: right;
+}
+.fixed>ul.module>li a{
+    font-size: 1rem
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -6,30 +44,45 @@ header {
     margin-top: 25px;
 }
 
+.menu{
+    display: none;
+}
+
 header nav {
     background-color: var(--bgheader);
     padding: 1rem 2rem;
     border-radius: 55px;
+    box-shadow: 1px 1px 40px rgba(51, 50, 50, 0.516);
 }
 
-ul {
+
+ul{
     list-style: none;
+}
+
+header nav > ul {
     display: flex;
     gap: 14px;
 }
 
-a {
+a{
     text-decoration: none;
     color: var(--title);
     font-weight: 500;
     opacity: 0.9;
     font-size: 0.9rem;
+    transition: all 0.2s ease;
 }
 
-li>a:hover {
+header nav > ul > li>a:hover {
     color: var(--blue);
+    opacity: 1;
 }
 
-button {
-    margin-right: 2rem;
+@media (max-width:700px) {
+    header{justify-content: space-between}
+    .menu{display: block}
+    .sample{display: none}
+    header nav{display: none;}
+    
 }
