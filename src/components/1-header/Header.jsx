@@ -6,12 +6,12 @@ function Header() {
     <header>
       <div className="sample" />
       <button
-        className="menu"
+        className="menu headerButton"
         onClick={() => {
           setShowModel(true);
         }}
       >
-        silce icon
+        <i className="fa-solid fa-bars"></i>
       </button>
       <nav>
         <ul>
@@ -32,7 +32,9 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <button>click</button>
+      <button className="mode">
+        <i className="fa-regular fa-moon"></i>
+      </button>
       {showModel && (
         <div className="fixed">
           <ul className="module">
@@ -41,8 +43,9 @@ function Header() {
                 onClick={() => {
                   setShowModel(false);
                 }}
+                className="closeButton"
               >
-                click
+                <i className="fa-solid fa-xmark"></i>
               </button>
             </li>
             <li>
